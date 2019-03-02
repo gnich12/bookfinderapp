@@ -1,7 +1,7 @@
 import axios from 'axios'
 import config from '../../config.js'
 
-const APIKEY = config.GOOGLE_API_KEY // 'AIzaSyCYXQaI1f3e7WnlVReYy8871nAvDMB06qQ'
+const APIKEY = config.GOOGLE_API_KEY
 
 const state = {
   books: ''

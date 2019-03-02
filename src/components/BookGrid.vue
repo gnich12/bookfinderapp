@@ -1,9 +1,9 @@
 <template>
-  <v-container class="mt-5" grid-list-md>
+  <v-container class="mt-5" grid-list-lg>
     <template v-if="showError">
-    <v-layout row wrap >
-      <v-flex v-for="(items) in result.books.items" :key="items.id" xs12 sm6 mb-3>
-        <v-card height="275px" width="500px">
+    <v-layout row wrap>
+      <v-flex v-for="(items) in result.books.items" :key="items.id" x12>
+        <v-card height="275px" width="500px" elevation="8">
           <v-container >
           <v-layout>
             <v-flex xs4>
@@ -32,11 +32,12 @@
                       </template>
                     </p>
                     </div>
-                </div>
-                <div>
+                </div></v-card-title>
+                <v-card-actions>
+                  <div>
                   <v-btn class="green lighten-1 white--text" :href="items.volumeInfo.previewLink" target="_blank">See This Book</v-btn>
                 </div>
-              </v-card-title>
+                </v-card-actions>
             </v-flex>
           </v-layout>
           </v-container>

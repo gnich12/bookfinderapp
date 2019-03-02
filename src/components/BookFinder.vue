@@ -1,21 +1,24 @@
 <template>
   <v-container>
-    <v-layout align-center row>
-      <v-flex>
+    <v-layout align-center justify-center row>
+      <v-flex xs12 sm6>
         <h1 class="green--text lighten-1">{{title}} <v-icon color="green">fas fa-book</v-icon></h1>
       </v-flex>
     </v-layout>
-    <v-layout align-center fill-height row class="mt-5">
-      <v-flex xs7 offset-xs2>
+    <v-layout class="mt-5" row>
+      <v-flex xs10 offset-xs1 sm10>
         <v-text-field
         label="Search by book title or author..."
-        v-model="bookquery"></v-text-field>
-      </v-flex>
-      <v-flex xs1 offset-xs0>
-        <v-btn class="green lighten-1 white--text" @click="callApi">Search</v-btn>
+        v-model="bookquery"
+        append-icon="fas fa-search"
+        @click:append="callApi"
+         color="green"
+         @keyup.enter="callApi"
+         hint="press enter or click search to submit query">
+        </v-text-field>
       </v-flex>
     </v-layout>
-    <v-layout align-center justify-center row>
+    <v-layout>
       <v-flex>
         <book-grid :result="getQueryResults" :error="msg" :showError="error" :icon="emoji"></book-grid>
       </v-flex>
